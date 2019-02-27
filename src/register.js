@@ -1,12 +1,21 @@
 import * as React from 'react';
 import addons from '@storybook/addons';
-import Themes from './Themes';
 
-addons.register('storybook/jss-themes', (api) => {
-    addons.addPanel('storybook/jss-themes/panel', {
-        title: 'Themes',
+class Panel extends React.Component {
+    render() {
+        return (
+            <div>
+                abc
+            </div>
+        );
+    }
+}
+
+addons.register('storybook/my-addon', (api) => {
+    addons.addPanel('storybook/my-addon/panel', {
+        title: 'My Panel',
         render() {
-            return <Themes channel={addons.getChannel()} api={api} />;
+            return <Panel channel={addons.getChannel()} api={api} />;
         }
     });
 });
